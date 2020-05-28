@@ -1,0 +1,1 @@
+export const sidebarBg = '#3e3e59'

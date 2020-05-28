@@ -1,14 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
+import styled from 'styled-components'
 import './App.css';
+import Sidebar from './components/sidebar'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
+  const Wrapper = styled.div`
+  font-family: 'Nunito', sans-serif;`;
 
-      </header>
-    </div>
+  return (
+    <Wrapper>
+      <Sidebar />
+    </Wrapper>
   );
 }
 
