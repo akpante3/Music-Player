@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components'
 import { sidebarBg } from '../style/color'
+import {ReactComponent as MusicIcon} from '../icons/music.svg';
+import '../App.css'
 
 const Sidebar = () => {
 
@@ -19,26 +21,28 @@ const Sidebar = () => {
     list-style: none;
     padding: 0px;
     li { 
-      margin: 10px 0px;
+      margin: 30px 0px;
       padding: 0px 20px 0px 20px;
       font-weight: 700;
       font-size: 22px;
       cursor: pointer;
-      transition: 1s;
       border-left: 2px solid none;
-      
-      img {
-          width: 20px;
-          height: 20px;
-          fill: white;
-      }
-      :hover {
-          color: #40b1e1;
-          border-left: 2px solid #40b1e1;
-      }
-      :first-of-type {
-        border-top: none;
-      }
+        .icon {
+            margin-right: 20px;
+            fill: #d9d9da;
+            width: 20px;
+            height: 20px;
+        }
+        :hover {
+            color: #40b1e1;
+            border-left: 2px solid #40b1e1;
+            .icon {
+                fill: #40b1e1;
+            }
+        }
+        :first-of-type {
+            border-top: none;
+        }
     }
   }
   `
@@ -51,9 +55,9 @@ const Sidebar = () => {
         </AsideLogo>
         <AsideHeaders>
             <ul>
-                <li><img src={require('../icons/music.svg')}></img>hekkio</li>
-                <li>hekkio</li>
-                <li>hekkio</li>
+                <li><MusicIcon className={['icon', 'music-icon'].join(' ')}></MusicIcon>Music</li>
+                <li>Explore</li>
+                <li>Favorite</li>
             </ul>
         </AsideHeaders>
     </Aside>
