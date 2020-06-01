@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import { ReactComponent as Search } from '../icons/search.svg';
-import { textcolor, navBg } from '../style/color'
+import { textcolor, navBg } from '../utils/color'
 
 
 const Nav = () => {
@@ -11,6 +11,7 @@ const Nav = () => {
         background-color: ${navBg};
         padding: 20px 0px;
         position: relative;
+        transition: 1s;
         .search {
             top: 35%;
             left: 5%;

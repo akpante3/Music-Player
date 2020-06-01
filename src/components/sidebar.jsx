@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components'
-import { sidebarBg, textcolor} from '../style/color'
+import { sidebarBg, textcolor} from '../utils/color'
 import { ReactComponent as MusicIcon } from '../icons/music.svg';
 import { ReactComponent as Explore } from '../icons/sound-waves.svg';
 import { ReactComponent as Like } from '../icons/heart.svg';
+import { device } from '../utils/mediaQuery'
 import '../App.css'
 
-const Sidebar = () => {
+const Sidebar = (props) => {
 
   const Aside = styled.aside`
   color: ${textcolor};
   width: 300px;
   height: 100vh;
-  background-color: ${sidebarBg}`;
+  z-index: 5;
+  background-color: ${sidebarBg};
+`;
 
   const AsideLogo = styled.div`
     padding: 20px;
