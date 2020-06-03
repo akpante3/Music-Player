@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components'
 import './App.css';
 import Sidebar from './components/sidebar'
 import Nav from './components/nav'
-import Slider from './components/Slider'
+import Slider from './components/Slider/Slider'
 import { device } from './utils/mediaQuery'
 
 function App() {
@@ -18,6 +18,11 @@ function App() {
   from { left: 0; }
   to { left: -100%; }
   `;
+
+  const MainContent = styled.div`
+  width: 100%;
+  max-width: 1000px;
+  `
 
   const Wrapper = styled.div`
   display: flex;
@@ -66,6 +71,9 @@ function App() {
       </SidebarWrapper>
       <MainContainer>
         <Nav />
+        <MainContent>
+          <Slider />
+        </MainContent>
       </MainContainer>
     </Wrapper>
   );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
-import './App.css';
+import './Slider.css';
  
 // list of items
 const list = [
@@ -20,7 +20,14 @@ const list = [
 const MenuItem = ({text, selected}) => {
   return <div
     className={`menu-item ${selected ? 'active' : ''}`}
-    >{text}</div>;
+    >
+    <div className="menu-item__item">
+      <img className="menu-item__image"  src='https://media.pitchfork.com/photos/595be1315cb95824879c1534/1:1/w_320/444_jayz.png' />
+      <div>Stupid Love</div>
+      <div>Jay Z</div>
+      <div>Released 28.03.2020</div>
+    </div>
+    </div>;
 };
  
 // All items component
@@ -69,7 +76,7 @@ export default class Slider extends Component {
     const menu = this.menuItems;
  
     return (
-      <div className="App">
+      <div>
         <ScrollMenu
           data={menu}
           arrowLeft={ArrowLeft}
