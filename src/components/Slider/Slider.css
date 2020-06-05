@@ -14,12 +14,27 @@
   .menu-item__image {
     width: 150px;
     height: 150px;
+    border-radius: 5px;
   }
   .menu-item__item {
     pointer-events: none; 
   }
    
   .scroll-menu-arrow {
-    padding: 20px;
+    padding: 5px;
     cursor: pointer;
+  }
+
+  .scroll-menu-arrow img {
+    width: 20px;
+  }
+  .menu-item__artist {
+    font-weight: 300;
+  }
+  .menu-item__realese-date {
+    font-weight: 300;
+    font-size: 15px;
+  }
+  .menu-wrapper {
+    display: inline-block;
   }

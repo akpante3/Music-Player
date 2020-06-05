@@ -7,69 +7,67 @@ import { ReactComponent as Like } from '../icons/heart.svg';
 import { device } from '../utils/mediaQuery'
 import '../App.css'
 
-const Sidebar = (props) => {
-
-  const Aside = styled.aside`
-  color: ${textcolor};
-  width: 300px;
-  height: 100vh;
-  z-index: 5;
-  background-color: ${sidebarBg};
+const Aside = styled.aside`
+color: ${textcolor};
+width: 300px;
+height: 100vh;
+z-index: 5;
+background-color: ${sidebarBg};
 `;
 
-  const AsideLogo = styled.div`
-    padding: 20px;
-    margin-button: 30px;
-  `;
+const AsideLogo = styled.div`
+  padding: 20px;
+  margin-button: 30px;
+`;
 
-  const AsideCategories = styled.div`
-     ul {
-        list-style: none;
-        padding: 0px;
-        margin-top: 80px;
-        font-weight: 400;
-        li {
-            margin-left: 60px;
-            margin-bottom: 20px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-     }
-  `;
+const AsideCategories = styled.div`
+   ul {
+      list-style: none;
+      padding: 0px;
+      margin-top: 80px;
+      font-weight: 400;
+      li {
+          margin-left: 60px;
+          margin-bottom: 20px;
+          font-size: 18px;
+          cursor: pointer;
+      }
+   }
+`;
 
-  const AsideHeaders = styled.div`
-    ul {
-        list-style: none;
-        padding: 0px;
-        li { 
-        margin: 30px 0px;
-        padding: 0px 20px 0px 20px;
-        font-weight: 700;
-        font-size: 22px;
-        cursor: pointer;
-        border-left: 2px solid none;
-        transition: 0.7s;
-            .icon {
-                margin-right: 20px;
-                fill: #d9d9da;
-                width: 20px;
-                height: 20px;
-            }
-            :hover {
-                color: #40b1e1;
-                border-left: 2px solid #40b1e1;
-                .icon {
-                    fill: #40b1e1;
-                }
-            }
-            :first-of-type {
-                border-top: none;
-            }
-        }
-    }
-  `;
+const AsideHeaders = styled.div`
+  ul {
+      list-style: none;
+      padding: 0px;
+      li { 
+      margin: 30px 0px;
+      padding: 0px 20px 0px 20px;
+      font-weight: 700;
+      font-size: 22px;
+      cursor: pointer;
+      border-left: 2px solid none;
+      transition: 0.7s;
+          .icon {
+              margin-right: 20px;
+              fill: #d9d9da;
+              width: 20px;
+              height: 20px;
+          }
+          :hover {
+              color: #40b1e1;
+              border-left: 2px solid #40b1e1;
+              .icon {
+                  fill: #40b1e1;
+              }
+          }
+          :first-of-type {
+              border-top: none;
+          }
+      }
+  }
+`;
 
-
+const Sidebar = (props) => {
   return (
     <Aside>
         <AsideLogo>
