@@ -7,7 +7,7 @@ import styled, { keyframes } from 'styled-components'
 import './App.css';
 import Sidebar from './components/Sidebar'
 import Nav from './components/Nav'
-import Slider from './components/Slider/Slider'
+import Slider from './components/slider/Slider'
 import { device } from './utils/mediaQuery'
 import { bgColor, textcolor } from './utils/color'
 

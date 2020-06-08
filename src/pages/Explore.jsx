@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import Slider from '../components/Slider/Slider'
+import Slider from '../components/slider/Slider'
 import Recommended from '../components/Recommended';
 
 
