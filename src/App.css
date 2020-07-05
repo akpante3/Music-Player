@@ -5,3 +5,11 @@ body, html {
   padding: 0px;
   margin: 0px;
 }
+
+.cone {
+  display: flex;
+  align-content: space-between;
+}
+ul{
+  list-style: none
+}
