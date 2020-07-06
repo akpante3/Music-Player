@@ -11,13 +11,21 @@ const Header = styled.h1`
     margin-bottom: 20px;
 `
 
+const SubSection = styled.div`
+    display: flex;
+    margin-top: 5vh;
+    flex-wrap: wrap;
+`
+
 const Explore = () => {
     return (
        <div>
             <Header>New Realeases</Header>
             <Slider />
-            <Recommended />
-            <Favorite />
+            <SubSection>
+                <Recommended />
+                <Favorite />
+            </SubSection>
        </div>
     );
 }

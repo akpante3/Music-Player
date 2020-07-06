@@ -24,7 +24,8 @@ to { left: -100%; }
 
 const MainContent = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 90vh;
+  overflow: scroll;
   max-width: 98%;
   @media ${ device.tablet } {
     max-width: 700px;
@@ -46,7 +47,6 @@ font-family: 'Nunito', sans-serif;
 background: ${ bgColor };
 color: ${ textcolor };
 height: 100vh;
-overflow: hidden;
 .click-me {
   position: absolute;
   top:30px;
