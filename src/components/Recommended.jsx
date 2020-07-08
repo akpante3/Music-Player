@@ -84,38 +84,114 @@ const RecommendedSongs = [
         artist: 'kendrick',
         albumart: 'https://media.pitchfork.com/photos/595be1315cb95824879c1534/1:1/w_320/444_jayz.png'
     },
+    {
+        id: 5,
+        song: '44.4',
+        artist: 'alicia',
+        albumart: 'https://media.pitchfork.com/photos/595be1315cb95824879c1534/1:1/w_320/444_jayz.png'
+    },
+    {
+        id: 6,
+        song: '44.4',
+        artist: 'justin',
+        albumart: 'https://media.pitchfork.com/photos/595be1315cb95824879c1534/1:1/w_320/444_jayz.png'
+    },
+    {
+        id: 7,
+        song: '44.4',
+        artist: '50 cent',
+        albumart: 'https://media.pitchfork.com/photos/595be1315cb95824879c1534/1:1/w_320/444_jayz.png'
+    },
+    {
+        id: 8,
+        song: '44.4',
+        artist: 'missy',
+        albumart: 'https://media.pitchfork.com/photos/595be1315cb95824879c1534/1:1/w_320/444_jayz.png'
+    },
+    {
+        id: 9,
+        song: '44.4',
+        artist: 'nigga raw',
+        albumart: 'https://media.pitchfork.com/photos/595be1315cb95824879c1534/1:1/w_320/444_jayz.png'
+    },
+    {
+        id: 10,
+        song: '44.4',
+        artist: 'MI abaga',
+        albumart: 'https://media.pitchfork.com/photos/595be1315cb95824879c1534/1:1/w_320/444_jayz.png'
+    },
+    {
+        id: 11,
+        song: '44.4',
+        artist: '2 face idibia',
+        albumart: 'https://media.pitchfork.com/photos/595be1315cb95824879c1534/1:1/w_320/444_jayz.png'
+    },
+    {
+        id: 12,
+        song: '44.4',
+        artist: 'sexy steel',
+        albumart: 'https://media.pitchfork.com/photos/595be1315cb95824879c1534/1:1/w_320/444_jayz.png'
+    },
+    {
+        id: 13,
+        song: '44.4',
+        artist: 'sexy steel',
+        albumart: 'https://media.pitchfork.com/photos/595be1315cb95824879c1534/1:1/w_320/444_jayz.png'
+    },
 ]
 
+const SongList = (pagedSongs) => (
+    <ItemWrapper>
+        {
+        pagedSongs.map((data, index) => {
+            return(
+                <Item key={index}>
+                    <img className="explore_img"  src={data.albumart} />
+                    <ItemDesc>
+                        <div className="item-name">{data.song}</div>
+                        <div className="item-artist">{ data.artist }</div>
+                    </ItemDesc>
+                </Item>
+        )}) 
+        }
+    </ItemWrapper>
+)
 
 
 const Explore = () => {
-    let [firstSong, SetFirstSong] = useState(0);
+    let [ NextfirstSong, SetNextFirstSong] = useState(0);
+    let [ presentFirstSong, setPresentFirstSong] = useState(0);
+    let [songs, SetSongs] = useState([]);
 
 
-    const List = () => {
-        let pagedSongs = RecommendedSongs.slice(firstSong, (firstSong + 2))
-        let lastSong = pagedSongs[pagedSongs.length - 1]
-        // SetFirstSong(lastSong)
-        // const dataId = RecommendedSongs.findIndex((payload) => payload.id === data.id )
-        // SetFirstSong(dataId)
-        // console.log(firstSong, 'first')
+    const List = (pagedSongs, song) => {
+        let nextIndex = RecommendedSongs.findIndex((data) => data.id ===  song.id)
+        let firstIndex = RecommendedSongs.findIndex((data) => pagedSongs[0].id ===  data.id)
+        console.log({
+            nextIndex: nextIndex,
+            firstIndex: firstIndex,
+        }, '=================')
+        // if (firstIndex) {
+            SetNextFirstSong(nextIndex + 1)
+            setPresentFirstSong(firstIndex)
+            SetSongs(pagedSongs)
+        // }
+    }
 
-        return (
-        <ItemWrapper>
-            {
-               pagedSongs.map((data) => {
-                return(
-                    <Item>
-                        <img className="explore_img"  src={data.albumart} />
-                        <ItemDesc>
-                            <div className="item-name">{data.song}</div>
-                            <div className="item-artist">{ data.artist }</div>
-                        </ItemDesc>
-                    </Item>
-               )}) 
-            }
-       </ItemWrapper>
-        )
+    const forward = () => {
+        if (RecommendedSongs.length > NextfirstSong ) {
+            let data = RecommendedSongs.slice(NextfirstSong, (NextfirstSong + 4))
+            let song = data[data.length -1]
+            List(data, song)
+        }
+    }
+
+    const backward = () => {
+        if (presentFirstSong !== 0) {
+            let data = RecommendedSongs.slice(presentFirstSong - 4 , presentFirstSong)
+            let song = data[data.length -1]
+            List(data, song)
+        }
     }
 
 
@@ -127,12 +203,12 @@ const Explore = () => {
                   </HeaderText>
                   <HeaderDirection>
                       <HeaderDirectionImage>
-                            <img alt="arrow" onClick={ () => List() } src={require('../icons/backward-arrow.svg')} className="arrow-prev" />
-                            <img alt="arrow" onClick={ () => List() } src={require('../icons/forward-arrow.svg')} className="arrow-next" />
+                            <img alt="arrow" onClick={ () => backward() } src={require('../icons/backward-arrow.svg')} className="arrow-prev" />
+                            <img alt="arrow" onClick={ () => forward() } src={require('../icons/forward-arrow.svg')} className="arrow-next" />
                       </HeaderDirectionImage>
                   </HeaderDirection>
            </MainHeader>
-            { List() }
+           { SongList(songs) }
        </Main>
     );
 }
