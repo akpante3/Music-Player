@@ -9,6 +9,7 @@ import Sidebar from './components/Sidebar'
 import Nav from './components/Nav'
 import Slider from './components/slider/Slider'
 import { device } from './utils/mediaQuery'
+import Player from './components/Player';
 import { bgColor, textcolor } from './utils/color'
 
 
@@ -24,7 +25,7 @@ to { left: -100%; }
 
 const MainContent = styled.div`
   width: 100%;
-  height: 90vh;
+  height: 80vh;
   overflow: scroll;
   max-width: 98%;
   @media ${ device.tablet } {
@@ -44,9 +45,11 @@ display: flex;
 width: 100%;
 position: relative;
 font-family: 'Nunito', sans-serif;
+box-sizing: border-box;
 background: ${ bgColor };
 color: ${ textcolor };
 height: 100vh;
+overflow: hidden;
 .click-me {
   position: absolute;
   top:30px;
@@ -60,7 +63,14 @@ height: 100vh;
   animation: ${slideout} 0.5s forwards;
 }`;
 
- const SidebarWrapper = styled.div`
+const PlayerWrapper = styled.div`
+ width: 100%;
+ position: absolute;
+ bottom: 0;
+ z-index: 10;
+`
+
+const SidebarWrapper = styled.div`
   width: 100%;
   position: absolute;
   z-index: 5;
@@ -70,7 +80,7 @@ height: 100vh;
     position: static;
     width: auto;
   }
- `;
+`;
 const MainContainer = styled.div`
   width: 100%
 `
@@ -98,6 +108,9 @@ function App() {
           </Router>
         </MainContent>
       </MainContainer>
+      <PlayerWrapper>
+        <Player />
+      </PlayerWrapper>
     </Wrapper>
   );
 }

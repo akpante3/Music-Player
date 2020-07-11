@@ -56,6 +56,7 @@ const Main = styled.main`
 const Nav = () => {
     const [songs, setSongs] = useState([
                         { title: 'everything i wanted', artist: 'usher', album: 'everything i wanted' },
+                        { title: 'everything i wanted', artist: 'usher', album: 'everything i wanted' },
                         { title: 'everything i wanted', artist: 'usher', album: 'everything i wanted' }
                     ])
     return (
