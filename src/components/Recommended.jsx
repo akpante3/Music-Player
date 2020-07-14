@@ -143,16 +143,16 @@ const RecommendedSongs = [
 const SongList = (pagedSongs) => (
     <ItemWrapper>
         {
-        pagedSongs.map((data, index) => {
-            return(
-                <Item key={index}>
-                    <img className="explore_img"  src={data.albumart} />
-                    <ItemDesc>
-                        <div className="item-name">{data.song}</div>
-                        <div className="item-artist">{ data.artist }</div>
-                    </ItemDesc>
-                </Item>
-        )}) 
+            pagedSongs.map((data, index) => {
+                return(
+                    <Item key={index}>
+                        <img className="explore_img"  src={data.albumart} />
+                        <ItemDesc>
+                            <div className="item-name">{data.song}</div>
+                            <div className="item-artist">{ data.artist }</div>
+                        </ItemDesc>
+                    </Item>
+            )}) 
         }
     </ItemWrapper>
 )
