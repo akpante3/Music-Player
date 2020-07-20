@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import { Slider, RangeSlider } from 'rsuite';
 import { textcolor, navBg, playerbgcolor } from '../utils/color';
 import { ReactComponent as  Forward } from '../icons/advance.svg';
 import { ReactComponent as Backward } from '../icons/previous.svg';
@@ -8,6 +9,8 @@ import { ReactComponent as Fav } from '../icons/heart.svg';
 import { ReactComponent as Mic } from '../icons/mic.svg';
 import { ReactComponent as Speaker } from '../icons/speaker.svg';
 import { ReactComponent as Random } from '../icons/random.svg';
+import 'rsuite/dist/styles/rsuite-default.css'
+
 
 const PlayerWrapper = styled.div`
     width:100%;
@@ -82,6 +85,13 @@ const Nav = () => {
                   <div className="item-artist">justin</div>
                 </SongDesc>
             </Song>
+            <Slider
+                progress
+                defaultValue={50}
+                onChange={value => {
+                    console.log(value, '===');
+                }}
+            />
             <div className="fav-mic-icons">
                <Fav />
                <Mic />
