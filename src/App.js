@@ -7,7 +7,6 @@ import styled, { keyframes } from 'styled-components'
 import './App.css';
 import Sidebar from './components/Sidebar'
 import Nav from './components/Nav'
-import Slider from './components/slider/Slider'
 import { device } from './utils/mediaQuery'
 import Player from './components/Player';
 import { bgColor, textcolor } from './utils/color'
@@ -97,20 +96,20 @@ function App() {
       <div className="click-me" onClick={() => ToggleSideBar()}>
          click me
       </div>
-      <SidebarWrapper className={ openSideBar ? 'open-side-bar' : 'close-side-bar' }>
-        <Sidebar openSideBar={openSideBar} />
-      </SidebarWrapper>
-      <MainContainer>
-        <Nav />
-        <MainContent>
-          <Router >
+      <Router >
+        <SidebarWrapper className={ openSideBar ? 'open-side-bar' : 'close-side-bar' }>
+          <Sidebar openSideBar={openSideBar} />
+        </SidebarWrapper>
+        <MainContainer>
+          <Nav />
+          <MainContent>
             <Routes />
-          </Router>
-        </MainContent>
-      </MainContainer>
-      <PlayerWrapper>
-        <Player />
-      </PlayerWrapper>
+          </MainContent>
+        </MainContainer>
+        <PlayerWrapper>
+          <Player />
+        </PlayerWrapper>
+      </Router>
     </Wrapper>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import Slider from '../components/slider/Slider'
+import Slider from '../components/Slider/Slide'
 import Recommended from '../components/Recommended';
 import Favorite from '../components/Favorite';
 import Sound from 'react-sound';

@@ -4,6 +4,7 @@ import { sidebarBg, textcolor} from '../utils/color'
 import { ReactComponent as MusicIcon } from '../icons/music.svg';
 import { ReactComponent as Explore } from '../icons/sound-waves.svg';
 import { ReactComponent as Like } from '../icons/heart.svg';
+import { Link } from "react-router-dom";
 import { device } from '../utils/mediaQuery'
 import '../App.css'
 
@@ -77,8 +78,14 @@ const Sidebar = () => {
         </AsideLogo>
         <AsideHeaders>
             <ul>
-                <li><MusicIcon className='icon'></MusicIcon>Music</li>
-                <li><Explore className='icon'></Explore>Explore</li>
+                <li>
+                    <MusicIcon className='icon'></MusicIcon>
+                    Music
+                </li>
+                <li>
+                    <Explore className='icon'></Explore>
+                     <Link to="/explore">Explore</Link>
+                </li>
                 <li><Like className='icon'></Like>Favorite</li>
             </ul>
         </AsideHeaders>

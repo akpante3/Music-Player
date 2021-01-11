@@ -71,7 +71,7 @@ const ArrowRight = Arrow({ text: require('../../icons/forward-arrow.svg'), class
  
 const selected = 'item7';
  
-export default class Slider extends Component {
+export default class Slide extends Component {
   constructor(props) {
     super(props);
     // call it again if items count changes
